@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 /**
  * bounded stack การจัดอันดับหนังในค่ายMarvelที่คุณชื่นชอบ 10อันดับแรก
  */
@@ -23,8 +25,20 @@ public class BoundedStack {
     }
 
     private void checkRep() {
-        
+        assert Movies != null : "Movies must not be null";
+        assert Movies.size() <=MAX_MOVIES : "Movies size must not exceed Mex_Moview";
+        Set<String> seen = new HashSet<>();
+
+        for (String M : Movies) {
+            assert M != null : "Movies must not be null";
+            assert !M.isEmpty() : "Movies must not be Empty";
+            assert seen.add(M): "ชื่อหนังซ้ำ";
+
+        }
+
+
         }
     }
+
 
 
